@@ -1,0 +1,82 @@
+﻿<style>
+
+	h2 {
+		font-size: 32px;
+		margin: 20px 0px 10px 0px;
+	}
+
+	p {
+		font-size: 24px;
+		margin: 8px 0px 0px 0px;
+	}
+
+	li {
+		font-size: 18px;
+	}
+
+</style>
+
+
+<header>
+	<h1>About Me</h1>
+</header>
+
+<main>
+
+	<section>
+
+		<h2>Main Info</h2>
+
+		<p>
+			@($"Full Name: {ViewBag.FirstName} {ViewBag.LastName}")
+		</p>
+		<p>
+			@($"Gender: {ViewBag.Gender}")
+		</p>
+		<p>
+			@($"Nationality: {ViewBag.Nationality}")
+		</p>
+		<p>
+			Email: <a href="@ViewBag.Email">@ViewBag.Email</a>
+		</p>
+		<p>
+			GitHub: <a href="@ViewBag.GitHub">@ViewBag.GitHub</a>
+		</p>
+
+		<p>Spoken Languages:</p>
+
+		<ul>
+			@foreach (string language in ViewBag.Languages)
+			{
+				<li>@language</li>
+			}
+		</ul>
+
+	</section>
+
+	<section>
+
+		<h2>Hard Skills</h2>
+
+		<p>Programming Languages:</p>
+
+		<ul>
+			@foreach (string language in ViewBag.ProgrammingLanguages)
+			{
+				<li>@language</li>
+			}
+		</ul>
+
+		<p>Other Technologies:</p>
+
+		<ul>
+			@foreach (string technology in ViewBag.Technologies)
+			{
+				<li>@technology</li>
+			}
+		</ul>
+
+	</section>
+
+</main>
+

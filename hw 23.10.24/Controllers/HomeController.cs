@@ -23,6 +23,43 @@ namespace hw_23._10._24.Controllers
             return View();
         }
 
+        public IActionResult AboutMe()
+        {
+            ViewBag.FirstName = "Yehor";
+            ViewBag.LastName = "Kliushyn";
+            ViewBag.Gender = "Male";
+            ViewBag.Nationality = "Ukrainian";
+            ViewBag.Email = "egorka231231@gmail.com";
+            ViewBag.GitHub = " https://github.com/loxx3450";
+
+			ViewBag.Languages = new string[]
+			{
+				"Ukrainian",
+				"Russian",
+				"German",
+				"English"
+			};
+
+			ViewBag.ProgrammingLanguages = new string[]
+            {
+                "C#", 
+                "C++", 
+                "PHP", 
+                "JS"
+            };
+
+            ViewBag.Technologies = new string[]
+            {
+                "PostgreSQL + MySQL + SqlServer",
+                "Unity",
+                "HTML + CSS",
+                "Docker"
+            };
+
+
+			return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
