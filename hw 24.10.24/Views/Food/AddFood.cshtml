@@ -1,0 +1,50 @@
+﻿@model Food
+
+<style>
+
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	form {
+		width: 500px;
+		justify-content: center;
+	}
+
+	div.form-group {
+		margin: 12px 0px;
+	}
+
+</style>
+
+<main>
+
+	<h1>Add Food</h1>
+
+	<form method="post" asp-action="AddFood">
+
+		<div class="form-group">
+			<input asp-for="Title" type="text" class="form-control" placeholder="Title" />
+		</div>
+
+		<div class="form-group">
+			<input asp-for="Weight" type="number" step="0.01" class="form-control" placeholder="Weight" />
+		</div>
+
+		<div class="form-group">
+			<input asp-for="Price" type="number" step="0.01" class="form-control" placeholder="price" />
+		</div>
+
+		<div class="form-group">
+			<input type="submit" value="Add Food" class="btn btn-success form-control" />
+		</div>
+
+	</form>
+
+	<a asp-action="ReturnBack" class="btn btn-primary">Return Back</a>
+
+</main>
+

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Food>
+
+<ul>
+	@foreach (var item in Model)
+	{
+		<li>
+			@($"Title: {item.Title} | Weight: {item.Weight} | Price: {item.Price}")
+		</li>
+	}
+</ul>
+
+<a asp-action="AddFood" class="btn btn-primary">Add Food</a>
