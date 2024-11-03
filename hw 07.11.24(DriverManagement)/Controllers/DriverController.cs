@@ -49,14 +49,4 @@ public class DriverController : ControllerBase
 
         return Ok();
     }
-
-    [HttpGet("vehicles")]
-    public async Task<ActionResult<ICollection<Vehicle>>> GetVehicles(
-        [FromQuery] string? model,
-        [FromQuery] int? year,
-        [FromQuery] string? driverFirstName,
-        [FromQuery] int skip = 0, [FromQuery] int take = 10)
-    {
-        return Ok((await _driverService.FilterVehicles(model, year, driverFirstName, skip, take)));
-    }
 }

@@ -61,48 +61,6 @@ public class DriverService : IDriverService
             .Take(take)
             .ToArrayAsync();
     }
-
-    public async Task<ICollection<Vehicle>> FilterVehicles(string? model, int? year, string? driverFirstName, int skip = 0, int take = 20)
-    {
-        HashSet<string> validCategoriesHashSet = new HashSet<string> { "A", "B", "B1" };
-
-        var vehicles = _repository.GetAll<Vehicle>()
-            .Include(v => v.Driver)
-            .AsNoTracking()
-            .AsQueryable();
-
-        // Default filtering
-        if (!string.IsNullOrEmpty(model))
-        {
-            vehicles = vehicles.Where(v => v.Model == model);
-        }
-
-        if (year is not null)
-        {
-            vehicles = vehicles.Where(v => v.Year == year);
-        }
-
-        if (!string.IsNullOrEmpty(driverFirstName))
-        {
-            vehicles = vehicles.Where(v => v.Driver.FirstName == driverFirstName);
-        }
-        else
-        {
-            vehicles = vehicles.Where(v => v.Driver.Category != null);
-        }
-
-        // Checking category
-        var driverIds = _repository.GetAll<Driver>()
-            .Where(d => validCategoriesHashSet.Contains(d.Category.Symbol))
-            .Select(d => d.Id);
-
-        vehicles = vehicles.Where(v => !driverIds.Contains(v.Driver.Id) || v.FuelCapacity < 30);
-
-        return await vehicles
-            .Skip(skip)
-            .Take(take)
-            .ToArrayAsync();
-    }
 }
 
 /*

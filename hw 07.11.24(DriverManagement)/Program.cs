@@ -1,6 +1,8 @@
 using DriversManagement.API.Data;
 using DriversManagement.API.Interfaces;
 using DriversManagement.API.Services;
+using hw_07._11._24_DriverManagement_.Interfaces;
+using hw_07._11._24_DriverManagement_.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<IDriverService, DriverService>();
+builder.Services.AddScoped<IVehicleService, VehicleService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

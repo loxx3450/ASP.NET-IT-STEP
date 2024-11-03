@@ -58,6 +58,38 @@ namespace DriversManagement.API.Migrations
                     b.ToTable("Drivers");
                 });
 
+            modelBuilder.Entity("DriversManagement.API.Models.Vehicle", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DriverId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Engine")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("FuelCapacity")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Model")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DriverId");
+
+                    b.ToTable("Vehicles");
+                });
+
             modelBuilder.Entity("DriversManagement.API.Models.VehicleCategory", b =>
                 {
                     b.Property<int>("Id")
@@ -90,6 +122,17 @@ namespace DriversManagement.API.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("DriversManagement.API.Models.Vehicle", b =>
+                {
+                    b.HasOne("DriversManagement.API.Models.Driver", "Driver")
+                        .WithMany()
+                        .HasForeignKey("DriverId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Driver");
                 });
 
             modelBuilder.Entity("DriversManagement.API.Models.VehicleCategory", b =>
