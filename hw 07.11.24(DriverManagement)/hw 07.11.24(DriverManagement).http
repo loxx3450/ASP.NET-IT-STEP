@@ -1,0 +1,6 @@
+@hw_07._11._24_DriverManagement__HostAddress = http://localhost:5114
+
+GET {{hw_07._11._24_DriverManagement__HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

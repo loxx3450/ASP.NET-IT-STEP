@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw 01.11.24.API", "hw 01.11
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw 01.11.24.Core", "hw 01.11.24.Core\hw 01.11.24.Core.csproj", "{9EC85080-58BD-4F95-94B0-14C067BEC05C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw 07.11.24", "hw 07.11.24\hw 07.11.24.csproj", "{99F1E33E-0A55-4CCA-AD87-41AC59F2AA57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw 07.11.24", "hw 07.11.24\hw 07.11.24.csproj", "{99F1E33E-0A55-4CCA-AD87-41AC59F2AA57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw 07.11.24(DriverManagement)", "hw 07.11.24(DriverManagement)\hw 07.11.24(DriverManagement).csproj", "{2B6442E8-8AF7-4A80-B3E7-26D97018AD29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{99F1E33E-0A55-4CCA-AD87-41AC59F2AA57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99F1E33E-0A55-4CCA-AD87-41AC59F2AA57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99F1E33E-0A55-4CCA-AD87-41AC59F2AA57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B6442E8-8AF7-4A80-B3E7-26D97018AD29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B6442E8-8AF7-4A80-B3E7-26D97018AD29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B6442E8-8AF7-4A80-B3E7-26D97018AD29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B6442E8-8AF7-4A80-B3E7-26D97018AD29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
