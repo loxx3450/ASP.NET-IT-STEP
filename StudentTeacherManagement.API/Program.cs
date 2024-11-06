@@ -16,7 +16,7 @@ builder.Services.AddScoped<IGroupService, GroupService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddTransient<MyMiddleware>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(opt => opt.Filters.Add(new LogFilter()));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
